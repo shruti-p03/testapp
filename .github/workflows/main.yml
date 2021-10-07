@@ -26,6 +26,5 @@ jobs:
           npm ci
       - name: deploy
         run: |
-          npx ncc build index.js
           zip -j deploy.zip ./dist/*
           aws lambda update-function-code --function-name=testapp --zip-file=fileb://deploy.zip
