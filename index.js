@@ -4,7 +4,7 @@
 
     // Respond with "hello world" for requests that hit our root "/"
     app.get("/", function (req, res) {
-     return res.send("Hello 312");
+     return res.send("H 312");
     });
 
     // listen to port 7000 by default
