@@ -1,6 +1,8 @@
-     const express = require("express");
+const metric = require("./metric/setup");     
+const express = require("express");
+const app = express();
 
-    const app = express();
+metric.insertMiddleware(app, option: { normalizePath: false });
 
     // Respond with "hello world" for requests that hit our root "/"
     app.get("/", function (req, res) {
@@ -13,3 +15,5 @@
     });
 
     module.exports = app;
+metric.captureAllRoutes(app);
+metric.setupMetricService();
